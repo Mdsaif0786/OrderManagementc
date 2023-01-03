@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.8.2",
+    "node-cron": "^3.0.2",
+    "nodemon": "^2.0.20"
+  },
+  "name": "order-management",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "",
+    "start": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mdsaif0786/orderManagement.git"
+  },
+  "author": "md saif raza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mdsaif0786/orderManagement/issues"
+  },
+  "homepage": "https://github.com/Mdsaif0786/orderManagement#readme",
+  "description": ""
+}
