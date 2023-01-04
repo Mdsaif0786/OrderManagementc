@@ -23,12 +23,13 @@ const createOrder = async (req, res) => {
         }
 
         let discount = 0
+        // let catageroy= "Regular"
 
         let numberOfOrders = await orderModel.find({ customerId: data.customerId })
         let totalOrder = numberOfOrders.length + 1
         //console.log(totalOrder)
 
-        data.orderId = totalOrder
+        data.totalOrder = totalOrder
         //console.log(data)
 
         if (totalOrder == 9) {
@@ -39,10 +40,10 @@ const createOrder = async (req, res) => {
         }
 
         if (totalOrder == 10) {
-            await customerModel.findOneAndUpdate({ _id: data.customerId }, { catageroy: "Gold" }, { new: true })
+            await customerModel.findOneAndUpdate({ _id: data.customerId }, {  category: "Gold" }, { new: true })
         }
 
-        if (totalOrder >= 10 && totalOrder < 20) {
+        if (totalOrder > 10 && totalOrder < 20) {
             discount = price * 10 / 100
             price = price - discount
         }
@@ -56,9 +57,9 @@ const createOrder = async (req, res) => {
         }
 
         if (totalOrder == 20) {
-            await customerModel.findOneAndUpdate({ _id: data.customerId }, { catageroy: "platinum" }, { new: true })
+            await customerModel.findOneAndUpdate({ _id: data.customerId }, { category: "platinum" }, { new: true })
         }
-        if (totalOrder >= 20) {
+        if (totalOrder > 20) {
             discount = price * 20 / 100
             price = price - discount
         }

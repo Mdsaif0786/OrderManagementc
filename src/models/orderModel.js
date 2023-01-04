@@ -16,7 +16,7 @@ const orderSchema= new mongoose.Schema({
         type:Number,
 
     },
-    orderId:{
+    totalOrder:{
         type:Number
     },
     discount:{
